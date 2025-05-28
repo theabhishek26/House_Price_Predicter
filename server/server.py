@@ -30,6 +30,10 @@ def predict_home_price():
 @app.route('/')
 def home():
     return send_from_directory('../client', 'app.html')
+    
+@app.route('/<path:filename>') 
+def serve_static_files(filename):
+    return send_from_directory('../client', filename)
 
 
 if __name__ == "__main__":
