@@ -29,7 +29,7 @@ def predict_home_price():
 
 @app.route('/')
 def home():
-    return send_from_directory('../client', 'index.html')
+    return send_from_directory('../client', 'app.html')
 
 
 if __name__ == "__main__":
