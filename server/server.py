@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 from . import util
+from flask_cors import CORS
+CORS(app)
 
 
 app = Flask(__name__, static_folder='../client/static')
