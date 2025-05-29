@@ -4,7 +4,7 @@ from . import util
 
 app = Flask(__name__, static_folder='../client/static')
 
-@app.route('/get_location_names', methods=['GET'])
+@app.route('/api/get_location_names', methods=['GET'])
 def get_location_names():
     response = jsonify({
         'locations': util.get_location_names()
@@ -13,7 +13,7 @@ def get_location_names():
 
     return response
 
-@app.route('/predict_home_price', methods=['GET', 'POST'])
+@app.route('/api/predict_home_price', methods=['POST'])
 def predict_home_price():
     total_sqft = float(request.form['total_sqft'])
     location = request.form['location']
